@@ -316,7 +316,7 @@ with gr.Blocks() as iface:
             essay = gr.Textbox(label="Essay Text", lines=10)
             level = gr.Radio(["high school", "college"], label="Educational Level")
             word_count = gr.Number(label="Current Word Count", value=0, interactive=False)
-            expected_word_count = gr.Number(label="Expected Word Count", value=500, step=50)
+            expected_word_count = gr.Number(label="Expected Word Count", value=500, precision=0, step=50, interactive=True)
         
         with gr.Column(scale=1):
             gr.Markdown("## Grading Weights")
@@ -361,4 +361,4 @@ with gr.Blocks() as iface:
 
 # Launch the app
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(share=True)
